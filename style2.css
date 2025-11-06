@@ -1,0 +1,361 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+  --ikea-blue: #0051BA;
+  --ikea-yellow: #FFCC00;
+  --bg: #f7f8f9;
+  --card: #ffffff;
+  --muted: #6b6b6b;
+  --text: #111111;
+  --accent-dark: #2e2b29;
+  --shadow: 0 6px 18px rgba(16,24,40,0.08);
+  --radius-sm: 8px;
+  --container-width: 1100px;
+
+
+  --space-xs: 6px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 32px;
+}
+
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+img { max-width: 100%; display: block; height: auto; }
+
+.container {
+  width: calc(100% - 32px);
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+
+#site-header {
+  background: linear-gradient(180deg, var(--ikea-blue), #013a85);
+  color: white;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 0;
+}
+
+#logo {
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+}
+.brand-accent {
+  color: var(--ikea-yellow);
+  margin-left: 6px;
+  font-weight: 700;
+}
+
+
+#main-nav { margin-left: auto; }
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-block;
+}
+.nav-list a:hover,
+.nav-list a:focus {
+  background: rgba(255,255,255,0.08);
+  outline: none;
+  box-shadow: inset 0 -2px 0 rgba(255,255,255,0.06);
+}
+
+.nav-item.dropdown { position: relative; }
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 6px);
+  min-width: 180px;
+  background: var(--card);
+  color: var(--accent-dark);
+  box-shadow: 0 8px 24px rgba(16,24,40,0.12);
+  border-radius: 8px;
+  padding: 8px 0;
+  display: none;
+  z-index: 60;
+}
+.dropdown-menu li { list-style: none; }
+.dropdown-menu a {
+  display: block;
+  padding: 8px 14px;
+  color: var(--accent-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+.dropdown-menu a:hover,
+.dropdown-menu a:focus { background: rgba(0,0,0,0.04); }
+
+.nav-item.dropdown:hover .dropdown-menu,
+.nav-item.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+#hero {
+  text-align: left;
+  padding: 36px 0;
+  background: linear-gradient(180deg, rgba(255,204,0,0.06), transparent);
+  border-bottom: 1px solid rgba(16,24,40,0.04);
+  border-radius: 6px;
+}
+.hero-title {
+  margin: 0 0 8px 0;
+  font-size: 1.9rem;
+  color: var(--accent-dark);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.hero-sub {
+  margin: 0 0 12px 0;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+.hero-cta {
+  margin-top: var(--space-sm);
+  display: flex;
+  gap: 12px;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(16,24,40,0.06);
+  background: transparent;
+  color: var(--accent-dark);
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+.btn.primary {
+  background: var(--ikea-blue);
+  color: white;
+  border: none;
+}
+.btn:hover, .btn:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(16,24,40,0.08);
+  transition: all 160ms ease;
+}
+
+
+.badge {
+  display: inline-block;
+  background: var(--ikea-yellow);
+  color: var(--ikea-blue);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  vertical-align: middle;
+}
+.badge.small { padding: 3px 8px; font-size: 0.75rem; }
+
+
+.about-section,
+.vision-section {
+  margin-top: var(--space-md);
+  background: transparent;
+}
+.vision-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.vision-card {
+  background: var(--card);
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+
+.products-section { margin-top: var(--space-md); }
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 12px;
+}
+.product-card {
+  background: var(--card);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+.product-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.product-body {
+  padding: 12px 14px;
+  flex: 1 1 auto;
+}
+.product-title {
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+  color: var(--accent-dark);
+}
+.product-desc {
+  margin: 0 0 10px 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.recruitment-section {
+  margin-top: var(--space-lg);
+  padding: 16px;
+  background: linear-gradient(90deg, rgba(0,81,186,0.03), transparent);
+  border-radius: 8px;
+}
+
+.contact-section { margin-top: var(--space-md); }
+.social-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+  margin: 8px 0 0 0;
+}
+.social-list a { color: var(--ikea-blue); text-decoration: none; font-weight: 600; }
+
+form {
+  background: var(--card);
+  padding: 18px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  max-width: 760px;
+}
+.form-row {
+  display: block;
+  margin-bottom: 12px;
+}
+.form-row label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row input[type="number"],
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(16,24,40,0.08);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  background: #fafafa;
+}
+.form-row textarea { resize: vertical; min-height: 110px; }
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.inline-note {
+  display: inline-block;
+  background: rgba(0,0,0,0.03);
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-left: 8px;
+  font-size: 0.9rem;
+}
+
+#site-footer {
+  margin-top: 28px;
+  padding: 18px 0;
+  background: #fff;
+  border-top: 1px solid rgba(16,24,40,0.04);
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer-link {
+  color: var(--ikea-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 3px solid rgba(0,81,186,0.12);
+  outline-offset: 3px;
+  box-shadow: 0 6px 18px rgba(0,81,186,0.06);
+}
+
+@media (max-width: 900px) {
+  .header-inner { flex-direction: row; gap: 12px; }
+  .hero-title { font-size: 1.6rem; }
+  .product-img { height: 180px; }
+  .product-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .nav-list { display: none; } 
+  #logo { font-size: 1.1rem; }
+  .hero-sub { font-size: 0.95rem; }
+  .product-grid { grid-template-columns: 1fr; gap: 12px; }
+  .product-img { height: 160px; }
+
+  form { padding: 14px; }
+  .vision-list { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
